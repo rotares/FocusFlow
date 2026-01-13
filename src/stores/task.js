@@ -1,10 +1,10 @@
 import { ref, computed, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useTodoStore = defineStore('todo', () => {
+export const useTaskStore = defineStore('taskStore', () => {
 
   //хардкод постов 
-  const todoItems = ref([
+  const taskItems = ref([
     {
       id: 1,
       title: 'title',
@@ -26,7 +26,7 @@ export const useTodoStore = defineStore('todo', () => {
   })
 
   return {
-    todoItems,
+    taskItems,
     power
   }
 })

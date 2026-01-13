@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from 'vue'
-import todoList from './components/todoList.vue';
-import { useTodoStore } from './stores/todo';
+import taskList from './components/taskList.vue';
+import { useTaskStore } from './stores/task';
 import { storeToRefs } from 'pinia';
 
 const title = ref('FocusFlow')
-const store = useTodoStore()
+const store = useTaskStore()
 
 const {power} = storeToRefs(store)
 
@@ -30,7 +30,7 @@ const {power} = storeToRefs(store)
     </header>
     <main>
       <div class="px-6 py-12 pb-40">
-        <todoList></todoList>
+        <taskList></taskList>
       </div>
     </main>
   </div>
