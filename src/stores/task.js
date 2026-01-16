@@ -2,31 +2,33 @@ import { ref, computed, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useTaskStore = defineStore('taskStore', () => {
+  const taskItems = ref([])
 
-  //хардкод постов 
-  const taskItems = ref([
-    {
-      id: 1,
-      title: 'title',
+  const storeTask = (task) => {
+    const newTask = {
+      id: Date.now(),
       isCompleted: false,
-      energy: 1
-    },
-    {
-      id: 2,
-      title: 'title',
-      isCompleted: false,
-      energy: 12
+      ...task,
     }
-  ])
+    taskItems.value.push(newTask)
+    return newTask
+  }
 
-  //энергия
-  const power = reactive({
-    maxPower: 20,
-    currentPower: 0
+  const destroyTask = (task) => {
+    taskItems.value = taskItems.value.filter((t) => t.id !== task.id)
+    return task
+  }
+
+  const maxPower = 20
+  const getCurrentPower = computed(() => {
+    return taskItems.value.reduce((acc, { energy }) => acc + energy, 0)
   })
 
   return {
     taskItems,
-    power
+    maxPower,
+    getCurrentPower,
+    storeTask,
+    destroyTask,
   }
 })
