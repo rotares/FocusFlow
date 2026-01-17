@@ -15,8 +15,10 @@ const { storeTask } = store
 </script>
 
 <template>
-  <div class="fixed bottom-0 left-0 right-0 max-w-2xl mx-auto">
-    <div class="px-6 py-8 mb-10 border bg-slate-900 border-slate-800 rounded-2xl">
+  <div class="fixed bottom-0 left-0 right-0 max-w-2xl mx-auto px-6">
+    <div
+      class="focus-within:border-cyan-500/50 px-6 py-8 mb-10 border bg-slate-900 border-slate-800 rounded-2xl duration-300 transition-all"
+    >
       <input
         v-model="newTask.title"
         type="text"
