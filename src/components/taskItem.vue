@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useTaskStore } from '@/stores/task'
+import { Trash2, Zap } from 'lucide-vue-next'
 
 const props = defineProps({
   task: {
@@ -16,36 +17,31 @@ const { destroyTask } = store
 
 <template>
   <div
-    class="group bg-slate-800/30 hover:bg-slate-800/50 transition-all duration-200 hover:translate-x-1 rounded-2xl border border-slate-800 py-6 px-5"
+    class="group hover:border-slate-700 bg-slate-800/30 hover:bg-slate-800/50 transition-all duration-200 hover:translate-x-1 rounded-2xl border border-slate-800 py-5 px-5"
   >
-    <div class="flex gap-10 items-center">
+    <div class="flex gap-10 items-center h-9.5">
       <input type="checkbox" />
       <span class="grow">{{ task.title }}</span>
-      <div class="flex items-center justify-center relative w-10">
+      <div class="flex items-center justify-center relative md:w-10 gap-2">
         <div
-          class="flex items-center gap-1 group-hover:opacity-0 group-hover:invisible transition-all duration-200"
+          :class="[
+            task.energy >= 4
+              ? 'border-orange-500/30 text-orange-400 bg-orange-500/5'
+              : 'border-slate-700 text-slate-400 bg-slate-800',
+            'px-2 py-0.5 border rounded-2xl gap-1 text-md flex items-center md:group-hover:opacity-0 md:group-hover:invisible transition-all duration-200',
+          ]"
         >
+          <Zap class="w-5 h-5" />
           <span>{{ task.energy }}</span>
-          <span>icon</span>
         </div>
         <button
-          class="rounded-lg text-slate-500 absolute opacity-0 group-hover:opacity-100 group-hover:visible flex items-center justify-center invisible transition-all duration-200 hover:bg-red-200/20 hover:text-red-500/90 p-3"
+          class="rounded-lg text-slate-500 md:absolute opacity-100 md:opacity-0 md:group-hover:opacity-100 md:group-hover:visible flex items-center justify-center md:invisible transition-all duration-200 hover:bg-red-200/20 hover:text-red-500/90 p-3"
           @click="destroyTask(task)"
         >
-          <svg
-            class="h-5 w-5 fill-current transition-colors duration-200"
-            viewBox="0 0 21 21"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.35,16 L9.45,16 L9.45,8 L7.35,8 L7.35,16 Z M11.55,16 L13.65,16 L13.65,8 L11.55,8 L11.55,16 Z M5.25,18 L15.75,18 L15.75,6 L5.25,6 L5.25,18 Z M7.35,4 L13.65,4 L13.65,2 L7.35,2 L7.35,4 Z M15.75,4 L15.75,0 L5.25,0 L5.25,4 L0,4 L0,6 L3.15,6 L3.15,20 L17.85,20 L17.85,6 L21,6 L21,4 L15.75,4 Z"
-              transform="translate(0, 0)"
-            />
-          </svg>
+          <Trash2 class="w-6 h-6" />
         </button>
       </div>
     </div>
   </div>
 </template>
-
 <style scoped></style>
