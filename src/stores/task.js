@@ -5,6 +5,10 @@ export const useTaskStore = defineStore('taskStore', () => {
   const taskItems = ref([])
   const maxPower = 20
 
+  const setTasks = (tasks) => {
+    taskItems.value = tasks
+  }
+
   const storeTask = (task) => {
     const newTask = {
       id: Date.now(),
@@ -20,23 +24,9 @@ export const useTaskStore = defineStore('taskStore', () => {
     return task
   }
 
-  const getTasksFromLocalStorage = () => {
-    const getJsonTasks = JSON.parse(localStorage.getItem('tasks'))
-    if(getJsonTasks !== null && (typeof getJsonTasks === 'object' && Object.keys(getJsonTasks).length > 0)) {
-      taskItems.value = getJsonTasks
-    }
-  }
-
   const getCurrentPower = computed(() => {
     return taskItems.value.reduce((acc, { energy }) => acc + energy, 0)
   })
-
-  watch(taskItems, (newVal, oldVal) => {
-    const setJsonTasks = JSON.stringify(newVal)
-    localStorage.setItem('tasks', setJsonTasks)
-  }, { deep: true })
-
-  onMounted(getTasksFromLocalStorage)
 
   return {
     taskItems,
@@ -44,5 +34,6 @@ export const useTaskStore = defineStore('taskStore', () => {
     getCurrentPower,
     storeTask,
     destroyTask,
+    setTasks
   }
 })
