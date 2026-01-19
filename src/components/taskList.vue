@@ -2,7 +2,6 @@
 import taskItem from '@/components/taskItem.vue'
 import { useTaskStore } from '@/stores/task'
 import { storeToRefs } from 'pinia'
-import { onMounted } from 'vue'
 
 const store = useTaskStore()
 const { taskItems } = storeToRefs(store)

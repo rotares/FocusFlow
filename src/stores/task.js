@@ -1,4 +1,4 @@
-import { ref, computed, reactive, onMounted, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useTaskStore = defineStore('taskStore', () => {
@@ -34,6 +34,6 @@ export const useTaskStore = defineStore('taskStore', () => {
     getCurrentPower,
     storeTask,
     destroyTask,
-    setTasks
+    setTasks,
   }
 })

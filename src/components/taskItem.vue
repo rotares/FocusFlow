@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import { useTaskStore } from '@/stores/task'
 import { Trash2, Zap } from 'lucide-vue-next'
 
@@ -7,7 +6,9 @@ const props = defineProps({
   task: {
     type: Object,
     required: true,
-    default: {},
+    default() {
+      return {}
+    },
   },
 })
 
