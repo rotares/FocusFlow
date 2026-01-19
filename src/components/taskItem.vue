@@ -1,6 +1,7 @@
 <script setup>
 import { useTaskStore } from '@/stores/task'
-import { Trash2, Zap } from 'lucide-vue-next'
+import { Trash2, Zap, Circle, CircleCheck } from 'lucide-vue-next'
+import { computed } from 'vue'
 
 const props = defineProps({
   task: {
@@ -13,17 +14,36 @@ const props = defineProps({
 })
 
 const store = useTaskStore()
-const { destroyTask } = store
+const { destroyTask, toggleTaskState } = store
+
+const isCompletedTaskStyles = computed(() => {
+  return props.task.isCompleted
+    ? 'bg-teal-800/45 opacity-60'
+    : 'hover:border-slate-700 bg-slate-800/30 hover:bg-slate-800/50'
+})
 </script>
 
 <template>
   <div
-    class="group hover:border-slate-700 bg-slate-800/30 hover:bg-slate-800/50 transition-all duration-200 hover:translate-x-1 rounded-2xl border border-slate-800 py-5 px-5"
+    :class="[
+      isCompletedTaskStyles,
+      'group border-slate-800 hover:border-slate-700 p-5 duration-300 transition-all rounded-2xl border hover:translate-x-1 ',
+    ]"
   >
-    <div class="flex gap-10 items-center h-9.5">
-      <input type="checkbox" />
-      <span class="grow">{{ task.title }}</span>
-      <div class="flex items-center justify-center relative md:w-10 gap-2">
+    <div class="flex gap-2 items-center">
+      <button
+        class="rounded-full flex items-center justify-center h-13 aspect-square duration-700 transition-all"
+        :class="task.isCompleted ? 'text-emerald-400' : 'text-cyan-400'"
+        @click="toggleTaskState(task.id)"
+      >
+        <span class="sr-only">Button to change task status</span>
+        <CircleCheck size="27" v-if="task.isCompleted" />
+        <Circle size="27" v-else />
+      </button>
+      <span class="flex grow break-all" :class="{ 'line-through': task.isCompleted }">{{
+        task.title
+      }}</span>
+      <div class="flex items-center justify-center relative gap-2">
         <div
           :class="[
             task.energy >= 4

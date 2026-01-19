@@ -24,6 +24,13 @@ export const useTaskStore = defineStore('taskStore', () => {
     return task
   }
 
+  const toggleTaskState = (taskId) => {
+    const task = taskItems.value.find((t) => t.id === taskId)
+    if (task) {
+      task.isCompleted = !task.isCompleted
+    }
+  }
+
   const getCurrentPower = computed(() => {
     return taskItems.value.reduce((acc, { energy }) => acc + energy, 0)
   })
@@ -35,5 +42,6 @@ export const useTaskStore = defineStore('taskStore', () => {
     storeTask,
     destroyTask,
     setTasks,
+    toggleTaskState,
   }
 })
