@@ -11,7 +11,7 @@ const title = ref('FocusFlow')
 const store = useTaskStore()
 const { maxPower } = store
 const { getCurrentPower } = storeToRefs(store)
-const { energyColor } = useColorEnergy()
+const { energyColor, energyPercentage, gradientBar } = useColorEnergy()
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const { energyColor } = useColorEnergy()
         </div>
       </div>
     </div>
-    <AppEnergyBar />
+    <AppEnergyBar :gradient="gradientBar" :percentage="energyPercentage" />
   </header>
 </template>
 

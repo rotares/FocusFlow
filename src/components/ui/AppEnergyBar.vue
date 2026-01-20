@@ -1,13 +1,23 @@
 <script setup>
-import { useColorEnergy } from '@/composables/useColorEnergy'
-const { energyPercentage, gradientBar } = useColorEnergy()
+const props = defineProps({
+  percentage: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
+  gradient: {
+    type: String,
+    required: true,
+    default: '',
+  },
+})
 </script>
 
 <template>
   <div class="h-0.75 bg-slate-400/20">
     <div
-      :style="{ width: `${energyPercentage}%` }"
-      :class="[gradientBar, 'bg-linear-to-r transition-all duration-700 h-full']"
+      :style="{ width: `${props.percentage}%` }"
+      :class="[props.gradient, 'bg-linear-to-r transition-all duration-700 h-full']"
     ></div>
   </div>
 </template>
