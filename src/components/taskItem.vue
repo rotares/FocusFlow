@@ -1,7 +1,8 @@
 <script setup>
 import { useTaskStore } from '@/stores/task'
-import { Trash2, Zap, Circle, CircleCheck } from 'lucide-vue-next'
+import { Trash2, Zap } from 'lucide-vue-next'
 import { computed } from 'vue'
+import AppCheckBox from './ui/AppCheckBox.vue'
 
 const props = defineProps({
   task: {
@@ -31,15 +32,7 @@ const isCompletedTaskStyles = computed(() => {
     ]"
   >
     <div class="flex gap-2 items-center">
-      <button
-        class="rounded-full flex items-center justify-center h-13 aspect-square duration-700 transition-all"
-        :class="task.isCompleted ? 'text-emerald-400' : 'text-cyan-400'"
-        @click="toggleTaskState(task.id)"
-      >
-        <span class="sr-only">Button to change task status</span>
-        <CircleCheck size="27" v-if="task.isCompleted" />
-        <Circle size="27" v-else />
-      </button>
+      <AppCheckBox @changeToggle="toggleTaskState(task.id)" :isCompleted="task.isCompleted" />
       <span class="flex grow break-all" :class="{ 'line-through': task.isCompleted }">{{
         task.title
       }}</span>
