@@ -8,7 +8,10 @@ const { taskItems } = storeToRefs(store)
 </script>
 
 <template>
-  <div v-if="taskItems.length > 0" class="max-w-2xl mx-auto flex flex-col gap-5 pb-45">
+  <div
+    v-if="taskItems.length > 0"
+    class="max-w-2xl mx-auto flex flex-col gap-5 pb-45 max-[400px]:pb-60"
+  >
     <TaskItem v-for="task in taskItems" :task="task" :key="task.id"></TaskItem>
   </div>
 </template>
