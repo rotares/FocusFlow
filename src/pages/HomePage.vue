@@ -7,7 +7,7 @@ import { ref } from 'vue'
 import { useTaskStore } from '@/stores/task'
 import { storeToRefs } from 'pinia'
 import { Zap } from 'lucide-vue-next'
-import EnergyBar from '@/components/ui/EnergyBar.vue'
+import AppEnergyBar from '@/components/ui/AppEnergyBar.vue'
 
 const title = ref('FocusFlow')
 const store = useTaskStore()
