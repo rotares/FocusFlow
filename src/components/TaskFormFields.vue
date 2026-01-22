@@ -58,12 +58,12 @@ const isOverflowed = computed(() => getCurrentPower.value + newTask.energy > max
         :class="[
           !newTask.title || isOverflowed
             ? 'bg-slate-800 text-slate-600 cursor-not-allowed'
-            : 'bg-white text-slate-950 active:bg-cyan-400 hover:bg-cyan-400 transition-colors  cursor-pointer',
-          'px-4 py-3 rounded-lg transition-all duration-200',
+            : 'bg-cyan-400 md:bg-white text-slate-950 active:bg-cyan-400 hover:bg-cyan-400 transition-colors  cursor-pointer',
+          'px-12 py-3 rounded-lg transition-all duration-200',
         ]"
         :disabled="!newTask.title || isOverflowed"
       >
-        Добавить
+        +
       </button>
     </div>
   </div>
