@@ -23,7 +23,7 @@ const { taskItems } = storeToRefs(store)
       class="group max-sm:h-40 h-60 xl:h-70 transition-all rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-700"
     >
       <p
-        class="group-hover:text-cyan-400 duration-200 text-slate-200 text-xl text-shadow-2xs text-shadow-slate-500"
+        class="group-hover:text-cyan-400 duration-200 text-slate-500 text-base text-shadow-2xs text-shadow-slate-500"
       >
         You have no tasks
       </p>

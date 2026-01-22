@@ -20,7 +20,11 @@ const { energyColor, energyPercentage, gradientBar } = useColorEnergy()
   >
     <div class="pb-5 px-6">
       <div class="max-w-2xl mx-auto flex justify-between">
-        <h1 class="text-3xl font-bold text-white uppercase italic">{{ title }}</h1>
+        <h1
+          class="animate-pulse transition-all duration-700 mask-t-from-3.5 text-3xl font-bold text-white uppercase italic"
+        >
+          {{ title }}
+        </h1>
         <div
           :class="[
             energyColor,
