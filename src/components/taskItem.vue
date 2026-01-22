@@ -25,7 +25,7 @@ const isCompletedTaskStyles = computed(() => {
 </script>
 
 <template>
-  <div
+  <article
     :class="[
       isCompletedTaskStyles,
       'group border-slate-800 hover:border-slate-700 p-5 duration-300 transition-all rounded-2xl border hover:translate-x-1 ',
@@ -56,6 +56,6 @@ const isCompletedTaskStyles = computed(() => {
         </button>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 <style scoped></style>
