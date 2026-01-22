@@ -1,8 +1,8 @@
 <script setup>
 import TaskList from '@/components/TaskList.vue'
-import TaskForm from '@/components/TaskForm.vue'
 import { useTaskPersistence } from '@/composables/useTaskPersistence'
 import { Clock } from 'lucide-vue-next'
+import TaskEntryManager from '@/components/TaskEntryManager.vue'
 
 useTaskPersistence()
 
@@ -25,7 +25,7 @@ const today = new Date().toLocaleDateString('en-EN', {
       <TaskList></TaskList>
     </div>
   </section>
-  <TaskForm></TaskForm>
+  <TaskEntryManager></TaskEntryManager>
 </template>
 
 <style scoped></style>
