@@ -12,7 +12,7 @@ const { taskItems } = storeToRefs(store)
       v-if="taskItems.length > 0"
       name="taskList"
       tag="ul"
-      class="flex flex-col gap-5 pb-45 max-[400px]:pb-60 relative"
+      class="flex flex-col gap-5 md:pb-45 pb-15 relative"
     >
       <li v-for="task in taskItems" :key="task.id">
         <TaskItem :task="task"></TaskItem>
@@ -49,9 +49,7 @@ const { taskItems } = storeToRefs(store)
   opacity: 0;
 }
 
-.taskList-move {
-  opacity: 0;
-}
+
 .taskList-move,
 .taskList-enter-active,
 .taskList-leave-active {
@@ -65,6 +63,7 @@ const { taskItems } = storeToRefs(store)
 
 .taskList-leave-active {
   width: 100%;
+  opacity: 0;
   position: absolute;
 }
 </style>
