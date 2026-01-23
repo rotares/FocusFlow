@@ -45,7 +45,7 @@ const isOverflowed = computed(() => getCurrentPower.value + newTask.energy > max
             newTask.energy === powerNum
               ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/20'
               : 'text-slate-500 hover:text-slate-300',
-            'h-11 md:h-9.5 max-[400px]:placeholder:text-red-500 aspect-square rounded-md cursor-pointer transition-all duration-200',
+            'h-11 md:h-9.5 aspect-square rounded-md cursor-pointer transition-all duration-200',
           ]"
           v-for="powerNum in powerNums"
           :key="powerNum"
