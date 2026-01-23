@@ -35,16 +35,4 @@ import { computed } from 'vue'
 </template>
 
 <style scoped>
-.v-enter-active,
-.v-leave-active {
-  transition: all 0.5s ease;
-}
-.v-enter-from {
-  opacity: 0;
-  transform: translateY(5px);
-}
-.v-leave-to {
-  opacity: 0;
-  transform: translateY(-5px);
-}
 </style>
