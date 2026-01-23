@@ -1,20 +1,21 @@
 <script setup>
 import TaskItem from '@/components/TaskItem.vue'
+
 import { useTaskStore } from '@/stores/task'
 import { storeToRefs } from 'pinia'
 const store = useTaskStore()
-const { taskItems } = storeToRefs(store)
+const {getFilteredTasks } = storeToRefs(store)
 </script>
 
 <template>
   <Transition name="taskArea" mode="out-in">
     <TransitionGroup
-      v-if="taskItems.length > 0"
+      v-if="getFilteredTasks.length > 0"
       name="taskList"
       tag="ul"
       class="flex flex-col gap-5 md:pb-45 pb-15 relative"
     >
-      <li v-for="task in taskItems" :key="task.id">
+      <li v-for="task in getFilteredTasks" :key="task.id">
         <TaskItem :task="task"></TaskItem>
       </li>
     </TransitionGroup>
