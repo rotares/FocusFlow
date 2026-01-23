@@ -4,6 +4,9 @@ import { defineStore } from 'pinia'
 export const useTaskStore = defineStore('taskStore', () => {
   const taskItems = ref([])
   const maxPower = 20
+  const currentFilter = ref('all')
+
+  const filters = ['all', 'active', 'completed']
 
   const setTasks = (tasks) => {
     taskItems.value = tasks
@@ -35,13 +38,23 @@ export const useTaskStore = defineStore('taskStore', () => {
     return taskItems.value.reduce((acc, { energy }) => acc + energy, 0)
   })
 
+  const getFilteredTasks = computed(() => {
+    const copy = [...taskItems.value]
+    if(currentFilter.value === 'active') return copy.filter(t => !t.isCompleted)
+    else if(currentFilter.value === 'completed') return copy.filter(t => t.isCompleted)
+    else return copy
+  })
+
   return {
     taskItems,
     maxPower,
     getCurrentPower,
+    filters,
     storeTask,
     destroyTask,
     setTasks,
     toggleTaskState,
+    getFilteredTasks,
+    currentFilter
   }
 })
