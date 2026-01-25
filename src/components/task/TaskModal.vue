@@ -22,7 +22,7 @@ const close = () => emits('update:modelValue', false)
       class="flex modal top-0 bottom-0 right-0 z-10 left-0 bg-red fixed bg-black/60"
     >
       <div class="modal-content m-auto w-4/5">
-        <TaskFormFields @success="close"></TaskFormFields>
+        <TaskFormFields @success="close" />
       </div>
     </div>
   </Transition>

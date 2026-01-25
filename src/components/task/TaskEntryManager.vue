@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import TaskFormFields from './TaskFormFields.vue'
 import TaskModal from './TaskModal.vue'
-
+import AppButton from '@/components/base/AppButton.vue'
 const showModal = ref(false)
 </script>
 
@@ -14,13 +14,9 @@ const showModal = ref(false)
       <TaskFormFields />
     </div>
     <div class="md:hidden max-w-3xl mx-auto flex">
-      <button
-        v-if="!showModal"
-        class="bg-cyan-400 duration-500 text-slate-950 active:bg-cyan-400 hover:bg-cyan-400 cursor-pointer px-12 py-3 rounded-lg transition-all"
-        @click="showModal = true"
-      >
+      <AppButton v-if="!showModal" :variant="'active'" class="px-12 py-4" @click="showModal = true">
         +
-      </button>
+      </AppButton>
       <TaskModal v-model="showModal" />
     </div>
   </div>
