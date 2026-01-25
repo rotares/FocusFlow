@@ -16,7 +16,7 @@ const showModal = ref(false)
     <div class="md:hidden max-w-3xl mx-auto flex">
       <button
         v-if="!showModal"
-        class="bg-cyan-400 duration-500  text-slate-950 active:bg-cyan-400 hover:bg-cyan-400 cursor-pointer px-12 py-3 rounded-lg transition-all"
+        class="bg-cyan-400 duration-500 text-slate-950 active:bg-cyan-400 hover:bg-cyan-400 cursor-pointer px-12 py-3 rounded-lg transition-all"
         @click="showModal = true"
       >
         +

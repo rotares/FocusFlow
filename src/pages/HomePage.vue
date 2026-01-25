@@ -8,8 +8,8 @@ import AppSortButtons from '@/components/ui/AppSortButtons.vue'
 import { storeToRefs } from 'pinia'
 
 const store = useTaskStore()
-const {filters} = store
-const {currentFilter} = storeToRefs(store)
+const { filters } = store
+const { currentFilter } = storeToRefs(store)
 
 useTaskPersistence()
 

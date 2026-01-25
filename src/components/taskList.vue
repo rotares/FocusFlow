@@ -4,7 +4,7 @@ import TaskItem from '@/components/TaskItem.vue'
 import { useTaskStore } from '@/stores/task'
 import { storeToRefs } from 'pinia'
 const store = useTaskStore()
-const {getFilteredTasks } = storeToRefs(store)
+const { getFilteredTasks } = storeToRefs(store)
 </script>
 
 <template>
@@ -49,7 +49,6 @@ const {getFilteredTasks } = storeToRefs(store)
   transform: translateY(30px);
   opacity: 0;
 }
-
 
 .taskList-move,
 .taskList-enter-active,

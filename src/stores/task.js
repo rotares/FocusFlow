@@ -40,8 +40,8 @@ export const useTaskStore = defineStore('taskStore', () => {
 
   const getFilteredTasks = computed(() => {
     const copy = [...taskItems.value]
-    if(currentFilter.value === 'active') return copy.filter(t => !t.isCompleted)
-    else if(currentFilter.value === 'completed') return copy.filter(t => t.isCompleted)
+    if (currentFilter.value === 'active') return copy.filter((t) => !t.isCompleted)
+    else if (currentFilter.value === 'completed') return copy.filter((t) => t.isCompleted)
     else return copy
   })
 
@@ -55,6 +55,6 @@ export const useTaskStore = defineStore('taskStore', () => {
     setTasks,
     toggleTaskState,
     getFilteredTasks,
-    currentFilter
+    currentFilter,
   }
 })
