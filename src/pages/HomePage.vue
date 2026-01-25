@@ -1,10 +1,10 @@
 <script setup>
-import TaskList from '@/components/TaskList.vue'
+import TaskList from '@/components/task/TaskList.vue'
+import TaskEntryManager from '@/components/task/TaskEntryManager.vue'
+import AppSortButtons from '@/components/base/AppSortButtons.vue'
 import { useTaskPersistence } from '@/composables/useTaskPersistence'
 import { Clock } from 'lucide-vue-next'
 import { useTaskStore } from '@/stores/task'
-import TaskEntryManager from '@/components/TaskEntryManager.vue'
-import AppSortButtons from '@/components/ui/AppSortButtons.vue'
 import { storeToRefs } from 'pinia'
 
 const store = useTaskStore()
