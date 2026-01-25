@@ -1,6 +1,6 @@
 <script setup>
 import { Zap } from 'lucide-vue-next'
-import AppEnergyBar from '@/components/ui/AppEnergyBar.vue'
+import AppEnergyBar from '@/components/base/AppEnergyBar.vue'
 import { useColorEnergy } from '@/composables/useColorEnergy'
 import { ref } from 'vue'
 import { useTaskStore } from '@/stores/task'
