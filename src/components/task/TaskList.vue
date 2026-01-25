@@ -1,5 +1,5 @@
 <script setup>
-import TaskItem from '@/components/TaskItem.vue'
+import TaskItem from './TaskItem.vue'
 
 import { useTaskStore } from '@/stores/task'
 import { storeToRefs } from 'pinia'

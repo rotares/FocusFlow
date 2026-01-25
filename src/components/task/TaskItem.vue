@@ -2,7 +2,7 @@
 import { useTaskStore } from '@/stores/task'
 import { Trash2, Zap } from 'lucide-vue-next'
 import { computed } from 'vue'
-import AppCheckBox from './ui/AppCheckBox.vue'
+import AppCheckBox from '@/components/base/AppCheckBox.vue'
 
 const props = defineProps({
   task: {
