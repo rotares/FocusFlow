@@ -20,9 +20,9 @@ const today = new Date().toLocaleDateString('en-EN', {
 </script>
 
 <template>
-  <section class="px-6 py-8">
+  <section class="px-6 py-10">
     <div class="max-w-2xl mx-auto">
-      <div class="flex justify-between pb-5 text-slate-500 items-center">
+      <div class="flex justify-between pb-10 text-slate-500 items-center">
         <div class="flex flex-col gap-2">
           <h2 class="text-base">Your Tasks</h2>
           <div class="flex items-center justify-start gap-2 text-xs">
