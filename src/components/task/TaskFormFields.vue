@@ -1,8 +1,8 @@
 <script setup>
-import { computed, reactive } from 'vue'
+import AppButton from '@/components/base/AppButton.vue'
 import { useTaskStore } from '@/stores/task'
 import { storeToRefs } from 'pinia'
-import AppButton from '@/components/base/AppButton.vue'
+import { computed, reactive } from 'vue'
 const emits = defineEmits(['success'])
 
 const store = useTaskStore()
@@ -36,10 +36,10 @@ const isOverflowed = computed(() => getCurrentPower.value + newTask.energy > max
       placeholder="What are you focusing today?"
     />
     <div
-      class="flex max-[420px]:items-stretch items-center max-[400px]:gap-y-2 max-[420px]:flex-col justify-between pt-3 gap-4"
+      class="flex max-[450px]:items-stretch items-center max-[400px]:gap-y-2 max-[450px]:flex-col justify-between pt-3 gap-4"
     >
       <div
-        class="flex items-center max-[420px]:justify-center bg-slate-800/50 p-1 rounded-lg border border-slate-700/50"
+        class="flex items-center max-[450px]:justify-center bg-slate-800/50 p-1 rounded-lg border border-slate-700/50"
       >
         <AppButton
           v-for="powerNum in powerNums"
