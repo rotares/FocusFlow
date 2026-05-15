@@ -1,44 +1,40 @@
-# FocusFlow
+# FocusFlow ⚡
 
-This template should help get you started developing with Vue 3 in Vite.
+**FocusFlow** — это минималистичный таск-менеджер с элементами геймификации, построенный на концепции управления личной энергией. Вместо бесконечных списков дел, приложение помогает планировать день, исходя из вашего реального ресурса.
 
-## Recommended IDE Setup
+[![Vue 3](https://img.shields.io/badge/Vue.js-3.x-4fc08d?logo=vue.js)](https://vuejs.org/)
+[![Pinia](https://img.shields.io/badge/Pinia-State%20Management-ffe05e?logo=pinia)](https://pinia.vuejs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## 💡 Идея проекта
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Традиционные планировщики фокусируются на времени, но время — ресурс фиксированный, в то время как энергия — переменный. **FocusFlow** внедряет систему «энергозатратности» задач, чтобы предотвратить выгорание и повысить эффективность планирования.
 
-## Customize configuration
+Каждой задаче присваивается уровень сложности (стоимость энергии) от **1 до 5**:
+- 🔋 **1 — Легко:** Рутинные дела, не требующие усилий.
+- 🔋🔋 **2 — Средне:** Задачи с умеренной концентрацией.
+- 🔋🔋🔋 **3 — Акцент:** Стандартная рабочая единица.
+- 🔋🔋🔋🔋 **4 — Интенсивно:** Требует глубокого погружения.
+- 🔋🔋🔋🔋🔋 **5 — Глубокий фокус:** Максимальная ментальная нагрузка.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## ✨ Основные возможности
 
-## Project Setup
+- **Energy Budgeting:** Установка суточного лимита энергии. Вы не сможете добавить задачу, если она превышает ваш «бюджет» на день.
+- **Геймификация:** Визуальная шкала прогресса, превращающая планирование в управление персонажем.
+- **Modern UI:** Минималистичный темный интерфейс, созданный для максимальной концентрации на задачах.
+- **Persistence:** Сохранение данных в Local Storage для работы без авторизации.
 
-```sh
-npm install
-```
+## 🛠 Технологический стек
 
-### Compile and Hot-Reload for Development
+- **Frontend:** Vue 3 (Composition API)
+- **State Management:** Pinia
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide-vue-next
+- **Build Tool:** Vite
+- **Deploy:** GitHub Pages
 
-```sh
-npm run dev
-```
+## 🚀 Демо
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- [**Попробовать Онлайн**](https://rotares.github.io/FocusFlow/)
