@@ -42,8 +42,28 @@
 
 ## 🚀 Cкриншоты
 
-![Скриншот Основной интерфейс](./public/assets/main_interface.jpg)
-![Скриншот Поле создания](./public/assets/input_add_task.jpg)
-![Скриншот Задачи](./public/assets/task.jpg)
-![Скриншот Действия с задачей](./public/assets/action_with_task.jpg)
-![Скриншот ](./public/assets/overflowed_energy.jpg)
+<div align="center" style="margin-bottom: 40px;">
+  <p>Основной интерфейс</p>
+  <img src="./public/assets/main_interface.jpg" width="800"/>
+</div>
+
+<div align="center" style="margin-bottom: 40px;">
+  <p>Поле добавления задачи</p>
+  <img src="./public/assets/input_add_task.jpg" width="800"/>
+</div>
+
+<div align="center" style="margin-bottom: 40px;">
+  <p>Задача</p>
+  <img src="./public/assets/task.jpg" width="800"/>
+</div>
+
+<div align="center" style="margin-bottom: 40px;">
+  <p>Действия с задачей</p>
+  <img src="./public/assets/action_with_task.jpg" width="800"/>
+</div>
+
+<div align="center" style="margin-bottom: 40px;">
+  <p>Действия с задачей</p>
+  <img src="./public/assets/overflowed_energy.jpg" width="800"/>
+</div>
+
