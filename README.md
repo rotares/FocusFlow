@@ -38,3 +38,7 @@
 ## 🚀 Демо
 
 - [**Попробовать Онлайн**](https://rotares.github.io/FocusFlow/)
+
+<div align="center">
+  <video src="public/assets/record.webm" width="100%" autoplay loop muted playsinline></video>
+</div>
