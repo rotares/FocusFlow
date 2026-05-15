@@ -38,3 +38,5 @@
 ## 🚀 Демо
 
 - [**Попробовать Онлайн**](https://rotares.github.io/FocusFlow/)
+- [Видео - превью](https://github.com/user-attachments/assets/5a5249d5-e807-4c88-9df8-461fabe5e1f1)
+
