@@ -39,6 +39,11 @@
 
 - [**Попробовать Онлайн**](https://rotares.github.io/FocusFlow/)
 
-<div align="center">
-  <video src="public/assets/record.webm" width="100%" autoplay loop muted playsinline></video>
-</div>
+
+## 🚀 Cкриншоты
+
+![Скриншот Основной интерфейс](./public/assets/main_interface.jpg)
+![Скриншот Поле создания](./public/assets/input_add_task.jpg)
+![Скриншот Задачи](./public/assets/task.jpg)
+![Скриншот Действия с задачей](./public/assets/action_with_task.jpg)
+![Скриншот ](./public/assets/overflowed_energy.jpg)
